@@ -10,7 +10,7 @@ poetry add django
 pip install -r requirements.txt
 set -o errexit
 
-poetry install
+
 poetry add gunicorn
 poetry add 'whitenoise[brotli]'
 
