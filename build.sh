@@ -11,8 +11,6 @@ pip install -r requirements.txt
 set -o errexit
 
 
-poetry add gunicorn
-poetry add 'whitenoise[brotli]'
 
 python manage.py collectstatic --no-input
 python manage.py migrate
