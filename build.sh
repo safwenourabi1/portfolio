@@ -4,7 +4,7 @@
 
 
 
-
+pip install whitenoise
 pip install -r requirements.txt
 set -o errexit
 
