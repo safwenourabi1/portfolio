@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-xstohbns%co25e2si)jv%&$v-mf*tw0&$+fg6@2=a&itm1dj&s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://portfolio-safwen.onrender.com','portfolio-safwen-ourabi-7ee6.onrender.com','portfolio-safwen.onrender.com']
+ALLOWED_HOSTS = ['https://portfolio-safwen.onrender.com','portfolio-safwen-ourabi-7ee6.onrender.com','portfolio-safwen.onrender.com','safwenourabi.onrender.com']
 import os
 
 # Application definition
