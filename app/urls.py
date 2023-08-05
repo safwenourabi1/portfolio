@@ -11,5 +11,6 @@ urlpatterns = [
     path("main/imageencryption", views.show3, name="main/imageencryption"),
     path("main/electronicproject", views.show4, name="main/electronicproject"),
     path("", views.redir, name=""),
+    re_path(r'^.*$', RedirectView.as_view(url='main'), name='catch-all'),
 
 ]
