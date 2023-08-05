@@ -34,3 +34,6 @@ def show3(request):
     return render(request,'imageencryptionproject.html')
 def show4(request):
     return render(request,'electronicproject.html')
+def redir(request):
+    return redirect('main')
+    
