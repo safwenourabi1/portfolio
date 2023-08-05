@@ -275,9 +275,9 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  
+  background: url("https://docs.google.com/uc?export=&id=1xwxK58u3VoWAJ_bmI6crEC3vsZycv1tT") top right no-repeat;
   background-size: cover;
-  background: url("https://docs.google.com/uc?export=download&id=1xwxK58u3VoWAJ_bmI6crEC3vsZycv1tT") top right no-repeat;
+  
   background-position: center center;
   position: relative;
 }
