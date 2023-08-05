@@ -7,7 +7,8 @@ from .models import contact
 
 
 
-
+def handle_nonexistent_url(request):
+    return redirect('main')
 
 def main(request):
     if request.method == 'POST':
