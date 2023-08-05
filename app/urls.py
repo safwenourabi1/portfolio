@@ -10,5 +10,6 @@ urlpatterns = [
     path("main/databaseprojectmanagment", views.show2, name="main/databaseprojectmanagment"),
     path("main/imageencryption", views.show3, name="main/imageencryption"),
     path("main/electronicproject", views.show4, name="main/electronicproject"),
+    path("", views.redir, name=""),
 
 ]
