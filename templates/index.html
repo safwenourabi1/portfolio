@@ -302,7 +302,7 @@
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>    
               <li data-filter=".filter-web">Professional Projects</li>
-              <li data-filter=".filter-app">Academic Projects</li>
+              <li data-filter=".filter-app">Academic-Projects</li>
             </ul>
           </div>
         </div>
@@ -390,13 +390,13 @@
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h4>Location:</h4>
-                <p> Ariana, Tunisia</p>
+                <p> Ariana, Tunisie</p>
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>safouen.ourabi@gmail.com</p>
+                <p>safouen.ourabi@supcom.tn</p>
               </div>
 
               <div class="phone">
@@ -411,7 +411,7 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form  method="post" role="form" class="php-email-form">
+            <form id="myForm" method="post" role="form" class="php-email-form">
               {% csrf_token %} 
 
               <div class="row">
@@ -476,6 +476,46 @@
 
   <!-- Template Main JS File -->
   <script src="{% static 'assets/js/main.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#myForm').submit(function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        var formData = $(this).serialize(); // Serialize form data
+        var $form = $(this);
+        $('.loading').fadeIn();
+
+        $.ajax({
+            type: 'POST',
+            url: $(this).attr('action'), // Use the form's action attribute as the URL
+            data: formData,
+            
+            success: function(response) {
+               
+                $('#result').html(response); // Update a result div with the response
+                setTimeout(function() {
+                    $('.loading').fadeOut();
+                },100);
+                $('.sent-message').fadeIn();
+                $form.find('input[name="name"]').val('');
+                $form.find('input[name="email"]').val('');
+                $form.find('input[name="subject"]').val('');
+                $form.find('textarea[name="message"]').val('');
+                setTimeout(function() {
+                    $('.sent-message').fadeOut();
+                }, 5000);
+
+            },
+            error: function(xhr, textStatus, errorThrown) {
+                console.log('Error:', errorThrown);
+            }
+        });
+
+    });
+});
+</script>
+
 
 </body>
 
